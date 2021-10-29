@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidBasicMehr00</string>
+    <string name="save">Save!</string>
+    <string name="please_enter_your_mobile_number">Please enter your mobile number</string>
+    <string name="my_nice_app">My Nice App</string>
+    <string name="my_nice_title_from_java">My Nice Title From Java!</string>
+</resources>
