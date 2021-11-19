@@ -3,6 +3,7 @@ package com.pouyaheydari.training.sematec.android.basic.mehr00;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class TestRecyclerViewActivity extends AppCompatActivity {
+public class TestRecyclerViewActivity extends AppCompatActivity implements Runnable {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,14 @@ public class TestRecyclerViewActivity extends AppCompatActivity {
 
         RecyclerView recycler = findViewById(R.id.recycler);
 
+        String threadName = Thread.currentThread().getName();
+        Log.d("TAG", "onCreate: " + threadName);
+
+        TestThreadClass threadClass = new TestThreadClass();
+        threadClass.start();
+
+        Thread thread = new Thread(this);
+        thread.start();
 
         ArrayList<Person> persons = new ArrayList<>();
         persons.add(new Person("Pouya", "Heydari"));
@@ -46,7 +55,13 @@ public class TestRecyclerViewActivity extends AppCompatActivity {
 
         Intent intent = new Intent();
         intent.setAction("com.pouyaheydari.training.sematec.android.basic.mehr00.MY_ACTION");
-        intent.putExtra("userName","Pouya");
+        intent.putExtra("userName", "Pouya");
         sendBroadcast(intent);
+    }
+
+    @Override
+    public void run() {
+        String threadName = Thread.currentThread().getName();
+        Log.d("TAG", "run: " + threadName);
     }
 }

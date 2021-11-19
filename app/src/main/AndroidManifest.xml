@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidBasicMehr00">
         <activity
-            android:name=".TestRecyclerViewActivity"
-            android:exported="true">
+            android:name=".TestGlideActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,11 +24,21 @@
 
         </activity>
         <activity
-            android:name=".TestHandlerActivity"
+            android:name=".TestAsyncHttpConnectionActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".TestHttpUrlConnectionActivity"
             android:exported="true"></activity>
         <activity
+            android:name=".TestRecyclerViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TestHandlerActivity"
+            android:exported="true" />
+        <activity
             android:name=".TestPermissionActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".TestMenuActivity"
             android:exported="true" />
@@ -69,7 +79,7 @@
 
         <service android:name=".TestService" />
 
-        <receiver android:name=".TestBroadcastReceiver"/>
+        <receiver android:name=".TestBroadcastReceiver" />
     </application>
 
 </manifest>
