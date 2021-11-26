@@ -4,4 +4,6 @@
     <string name="please_enter_your_mobile_number">Please enter your mobile number</string>
     <string name="my_nice_app">My Nice App</string>
     <string name="my_nice_title_from_java">My Nice Title From Java!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
